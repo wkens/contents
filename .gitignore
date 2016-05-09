@@ -7,5 +7,7 @@ Homestead.json
 /public/.htaccess
 /public/css/*.css
 /public/css/*.css.map
+/public/fonts/
+/public/js/
 *.apache.conf
 composer.lock
