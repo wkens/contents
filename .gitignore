@@ -4,3 +4,8 @@
 Homestead.yaml
 Homestead.json
 .env
+/public/.htaccess
+/public/css/*.css
+/public/css/*.css.map
+*.apache.conf
+composer.lock

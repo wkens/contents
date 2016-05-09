@@ -1,0 +1,6 @@
+Alias /{{APP_NAME}} {{CUR_DIR}}/public/
+
+<Directory {{CUR_DIR}}/public/>
+	AllowOverride all
+	Require all granted
+</Directory>
