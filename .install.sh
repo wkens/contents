@@ -1,8 +1,14 @@
 #!/bin/bash
 
-APP_NAME=education
+APP_NAME=contents
 CUR_DIR=`pwd`
-PRIORITY_NO=002
+PRIORITY_NO=003
+
+touch storage/log/laravel.log
+chmod g+rwx storage/log/laravel.log
+for d in `find storage -type d`; do
+    chmod g+rwx $d
+done
 
 echo "##### APP_NAME=${APP_NAME}"
 echo "##### CUR_DIR=${CUR_DIR}"
