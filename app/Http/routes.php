@@ -11,10 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/template', function () {
-    return view('template');
-});
+Route::controller('/', 'PortalController');
+Route::controller('/test', 'TestController');

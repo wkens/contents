@@ -203,6 +203,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'CustomMarkdown' => App\Libraries\CustomMarkdown::class,
+        'Common' => App\Libraries\Common::class,
 
     ],
 
