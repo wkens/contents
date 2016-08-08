@@ -4,7 +4,17 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-abstract class Request extends FormRequest
+class Request extends FormRequest
 {
-    //
+    public function authorize()
+    {
+        return true;
+    }
+ 
+    public function rules()
+    {
+        return [
+            'cid' => 'sometimes|required|integer',
+        ];
+    }
 }
