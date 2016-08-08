@@ -10,10 +10,10 @@ class CustomMarkdown extends MarkdownExtra {
     protected $showLevel = 0;
     protected $labels = array();
     
-    public function __construct( $showLevel = 0 ){
+    public function __construct( $numberingLevel = 0 ){
         parent::__construct();
         $this->level = [0,0,0,0,0,0];
-        $this->showLevel = $showLevel;
+        $this->showLevel = $numberingLevel;
         $this->labels = array();
     }
     
@@ -47,46 +47,77 @@ class CustomMarkdown extends MarkdownExtra {
         }
         return $text;
     }
-    
-    protected function _doHeaders_callback_setext($matches) {
-		if ($matches[3] == '-' && preg_match('{^- }', $matches[1]))
-			return $matches[0];
 
-		$level = $matches[3]{0} == '=' ? 1 : 2;
-        
+    public function getHeaderLinkHtml($showLevel = 0){
+        if(!$showLevel){
+            $showLevel = $this->showLevel;
+        }
+        $currentLevel = 0;
+        $adgenda = '';
+        foreach($this->getLabels() as $label){
+            $level = intval($label['Level']);
+            if($showLevel<$level){
+                continue;
+            }
+            if($currentLevel < $level){
+                for($i=$currentLevel ; $i<$level ; $i++){
+                    $adgenda .= "<ul>\n";
+                }
+                $currentLevel = $level;
+            }else if($currentLevel > $level){
+                for($i=$currentLevel ; $i>$level ; $i--){
+                    $adgenda .= "</ul>\n";
+                }
+                $currentLevel = $level;
+            }
+            $adgenda .=
+                    '<li>' .
+                    "<a href=\"#{$label['ID']}\">" .
+                    $label['Number'] . ' ' .
+                    $label['Subject'] . "</a>\n";
+        }
+        return $adgenda;
+    }
+
+
+    protected function _doHeaders_callback_numbering($matches) {
+        $level = intval($matches['level']);
         $this->countHeader($level);
         $headerStr = $this->getHeaderStr($level);
         $headerId = $this->getHeaderId($level);
-
-		$defaultId = is_callable($this->header_id_func) ? call_user_func($this->header_id_func, $matches[1]) : null;
         
-		$attr  = $this->doExtraAttributes("h$level", $dummy =& $matches[2], $defaultId);
-		$block = "<h$level$attr id=\"{$headerId}\">{$headerStr} ".$this->runSpanGamut($matches[1])."</h$level>";
+        $block =
+            $matches['header'] .
+            " id=\"{$headerId}\">" .
+            (trim($headerStr)!==''? $headerStr . ' ' : '') .
+            $matches['subject'] .
+            $matches['footer'];
+
         $this->labels[$headerId] = [
             'Level' => $level,
             'ID' => $headerId,
             'Number' => $headerStr,
-            'Subject' => $this->runSpanGamut($matches[1])." ({$headerId})",
+            'Subject' => $matches['subject'],
         ];
-        return "\n" . $this->hashBlock($block) . "\n\n";
-	}
-    
-	protected function _doHeaders_callback_atx($matches) {
-		$level = strlen($matches[1]);
-        
-        $this->countHeader($level);
-        $headerStr = $this->getHeaderStr($level);
-        $headerId = $this->getHeaderId($level);
 
-		$defaultId = is_callable($this->header_id_func) ? call_user_func($this->header_id_func, $matches[2]) : null;
-		$attr  = $this->doExtraAttributes("h$level", $dummy =& $matches[3], $defaultId);
-		$block = "<h$level$attr id=\"{$headerId}\">{$headerStr} ".$this->runSpanGamut($matches[2])."</h$level>";
-        $this->labels[$headerId] = [
-            'Level' => $level,
-            'ID' => $headerId,
-            'Number' => $headerStr,
-            'Subject' => $this->runSpanGamut($matches[2])." ({$headerId})",
-        ];
-        return "\n" . $this->hashBlock($block) . "\n\n";
-	}
+        return $block;
+    }
+    
+    public function transform($text) {
+    #
+    # Main function. Performs some preprocessing on the input text
+    # and pass it through the document gamut.
+    #
+        $text = parent::transform($text);
+        $text = preg_replace_callback(
+            '{
+                ^(?<header><h(?<level>[123456]).*)>
+                (?<subject>.*)
+                (?<footer></h[123456]>)$
+            }mx',
+            array($this, '_doHeaders_callback_numbering'), $text);
+
+        return $text;
+    }
+
 }
