@@ -1,0 +1,41 @@
+@import "variables";
+
+.menu{
+    float:left;
+    padding:10px;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 100;
+    position:fixed;
+}
+
+.menu-icon{
+    float:left;
+    margin:0;
+    padding:0;
+    color:white;
+    float: left;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.note-list{
+    margin: 0 0 0 10px;
+    padding:5px;
+    border: solid 1px #ccc;
+    color: white;
+    float: left;
+
+    a{
+        color: white;
+    }
+    a:hover{
+        color: black;
+        background-color: white;
+    }
+}
+
+@media print{
+    .menu{
+        display:none;
+    }
+}

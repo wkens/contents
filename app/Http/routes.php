@@ -11,6 +11,5 @@
 |
 */
 
+Route::get('/note/{id}', 'PortalController@getShowNote');
 Route::controller('/', 'PortalController');
-Route::get('/detail/{cid}', 'PortalController@getDetail');
-Route::controller('/test', 'TestController');

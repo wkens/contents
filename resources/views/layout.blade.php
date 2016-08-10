@@ -19,13 +19,7 @@
   </head>
 
   <body>
-      <div class="contents">
-          <div class="right-side">
-              @yield('adgenda')
-          </div>
-          @yield('contents')
-      </div>
-
+    @yield('contents')
     <!--
     ==================================================
     Placed at the end of the document so the pages load faster

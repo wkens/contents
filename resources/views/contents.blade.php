@@ -3,13 +3,15 @@
 @section('title', 'contents')
 
 @section('contents')
-<div class="markdown">
-{!! $contents or '' !!}
+<div class="menu">
+    @include('menu')
 </div>
-@endsection
-
-@section('adgenda')
 <div class="adgenda">
-{!! $adgenda or '' !!}
+    @include('adgenda')
+</div>
+<div class="contents">
+    <div class="markdown">
+    {!! $contents or '' !!}
+    </div>
 </div>
 @endsection

@@ -1,0 +1,46 @@
+@import "variables";
+
+.adgenda{
+    float:right;
+    padding:10px;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 100;
+    position:fixed;
+}
+
+.adgenda-icon{
+    float:right;
+    margin:0;
+    padding:0;
+    color:white;
+    float: left;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.adgenda-list{
+    margin: 0 0 0 10px;
+    padding:5px;
+    border: solid 1px #ccc;
+    color: white;
+    float: right;
+
+    a{
+        color: white;
+    }
+    a:hover{
+        color: black;
+        background-color: white;
+    }
+    ul li, ol li {
+      padding-left: 1em;
+      text-indent: -1em;
+      list-style-position: inside;
+    }
+}
+
+@media print{
+    .adgenda{
+        display:none;
+    }
+}
