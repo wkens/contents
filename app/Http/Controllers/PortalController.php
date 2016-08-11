@@ -8,7 +8,10 @@ use App\Libraries\NoteDB;
 class PortalController extends Controller
 {
     public function getIndex(Request $req){
-        
+        $noteDB = NoteDB::getNotes();
+        $contents = null;
+        $adgenda = null;
+        return view('contents',compact('noteDB','contents','adgenda'));
     }
     public function getList(Request $req){
         $noteDB = NoteDB::getNotes();

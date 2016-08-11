@@ -38,7 +38,7 @@ $contents-width: 20cm;
     .contents {
         width: $contents-width;
         padding: 0;
-        margin: 0 calc( 48vw / 2 );
+        margin: 0 auto;
         border: dashed 1pt red;
         border-width: 1pt;
     }

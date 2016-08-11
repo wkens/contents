@@ -4,7 +4,7 @@
 ←
 </div>
 <div class="adgenda-list">
-{!! $adgenda !!}
+{!! $adgenda or ''!!}
 aaaaaa
 </div>
 @show
