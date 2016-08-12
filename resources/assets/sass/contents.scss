@@ -37,8 +37,8 @@ $contents-width: 20cm;
 @media screen {
     .contents {
         width: $contents-width;
-        padding: 0;
         margin: 0 auto;
+        padding: 0;
         border: dashed 1pt red;
         border-width: 1pt;
     }
