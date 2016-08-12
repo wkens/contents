@@ -6,9 +6,7 @@
 <div class="menu">
     @include('menu')
 </div>
-<div class="adgenda">
-    @include('adgenda')
-</div>
+@include('adgenda')
 <div class="contents">
     <div class="markdown">
     {!! $contents or '' !!}

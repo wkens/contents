@@ -3,7 +3,7 @@ $icon-padding: 3px;
 $icon-image-size: $icon-size - $icon-padding * 2;
 
 .left-arrow{
-    background: url('../images/arrow.svg');
+    background: url('/contents/images/arrow.svg');
     background-size: $icon-image-size $icon-image-size;
     background-clip: content-box;
     background-origin: content-box;
@@ -24,7 +24,7 @@ $icon-image-size: $icon-size - $icon-padding * 2;
 }
 
 .right-arrow{
-    background: url('../images/arrow.svg');
+    background: url('/contents/images/arrow.svg');
     background-size: $icon-image-size $icon-image-size;
     background-clip: content-box;
     background-origin: content-box;
