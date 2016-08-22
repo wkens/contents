@@ -1,6 +1,6 @@
 @import "variables";
 
-.menu{
+.notes{
     float:left;
     padding:10px;
     background-color: rgba(0,0,0,0.6);
@@ -8,7 +8,7 @@
     position:fixed;
 }
 
-.menu-icon{
+.notes-icon{
     width:40px;
     height:40px;
     float:left;
@@ -22,7 +22,7 @@
     font-weight: 700;
 }
 
-.note-list{
+.notes-list{
     margin: 0 0 0 10px;
     padding:5px;
     border: solid 1px #ccc;
@@ -39,7 +39,7 @@
 }
 
 @media print{
-    .menu{
+    .notes{
         display:none;
     }
 }

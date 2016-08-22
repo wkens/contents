@@ -3,7 +3,7 @@
 @section('title', 'contents')
 
 @section('contents')
-<div class="menu">
+<div class="notes">
     @include('notes')
 </div>
 @include('adgenda')
