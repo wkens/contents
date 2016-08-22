@@ -4,7 +4,7 @@
 
 @section('contents')
 <div class="menu">
-    @include('menu')
+    @include('notes')
 </div>
 @include('adgenda')
 <div class="contents">
