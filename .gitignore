@@ -8,7 +8,6 @@ Homestead.json
 /public/css/*.css
 /public/css/*.css.map
 /public/fonts/
-/public/js/
 *.apache.conf
 composer.lock
 .gulp.log
