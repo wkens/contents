@@ -1,0 +1,45 @@
+@import "variables";
+
+.notes{
+    float:left;
+    padding:10px;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 100;
+    position:fixed;
+}
+
+.notes-icon{
+    width:40px;
+    height:40px;
+    float:left;
+    margin:0;
+    padding:0;
+    color:white;
+    float: left;
+    font-size: 24px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 700;
+}
+
+.notes-list{
+    margin: 0 0 0 10px;
+    padding:5px;
+    border: solid 1px #ccc;
+    color: white;
+    float: left;
+
+    a{
+        color: white;
+    }
+    a:hover{
+        color: black;
+        background-color: white;
+    }
+}
+
+@media print{
+    .notes{
+        display:none;
+    }
+}

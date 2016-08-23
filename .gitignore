@@ -11,3 +11,7 @@ Homestead.json
 /public/js/
 *.apache.conf
 composer.lock
+.gulp.log
+.scsses
+.scsses.new
+

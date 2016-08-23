@@ -12,9 +12,5 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    var bpath = 'node_modules/bootstrap-sass/assets';
-    mix.sass('app.scss')
-        .copy(bpath + '/fonts', 'public/fonts')
-        .copy(bpath + '/javascripts/bootstrap.min.js', 'public/js');
     mix.sass('layout.scss');
 });

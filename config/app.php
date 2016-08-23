@@ -111,6 +111,8 @@ return [
     'log' => env('APP_LOG', 'single'),
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
+    
+    'contents_path' => env('CONTENTS_PATH', storage_path('contents')),
 
     /*
     |--------------------------------------------------------------------------
@@ -203,6 +205,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'CustomMarkdown' => App\Libraries\CustomMarkdown::class,
+        'Common' => App\Libraries\Common::class,
 
     ],
 
