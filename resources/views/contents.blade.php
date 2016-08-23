@@ -3,13 +3,14 @@
 @section('title', 'contents')
 
 @section('contents')
-<div class="notes">
-    @include('notes')
-</div>
-@include('adgenda')
+
+@include('sb-notes')
+@include('sb-adgenda')
+
 <div class="contents">
     <div class="markdown">
     {!! $contents or '' !!}
     </div>
 </div>
+
 @endsection

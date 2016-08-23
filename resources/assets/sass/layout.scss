@@ -8,6 +8,10 @@
     line-height: $line-height-base;
 }
 
+.container{
+    margin:0;
+    padding:0;
+}
 @import "reset";
 @import "notes";
 @import "adgenda";

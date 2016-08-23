@@ -19,11 +19,15 @@
   </head>
 
   <body>
-    @yield('contents')
+    <div class="container">
+        @yield('contents')
+    </div>
     <!--
     ==================================================
     Placed at the end of the document so the pages load faster
     -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+    <script src="{{url('js/sidemenu.js')}}" type="text/javascript"></script>
+    </script>
   </body>
 </html>

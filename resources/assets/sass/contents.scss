@@ -6,9 +6,25 @@ $contents-width: 20cm;
     h1, h2, h3, h4, h5, h6 {
         margin: $margin-base 0;
     }
+    
+    code {
+        font-family: $font-mono;
+        color: $md-code-fg;
+    }
+    
     p {
         margin: $margin-thin 0;
+        
+        code{
+            background: $md-code-bg;
+            padding: $margin-thin/4 $margin-thin;
+            border: $md-code-border;
+            border-radius: $margin-thin;
+            -webkit-border-radius: $margin-thin;
+            -moz-border-radius: $margin-thin;
+        }
     }
+
     h1{
         font-size: $font-size-h1;
         border: solid 1pt $section-border-color;
@@ -32,6 +48,37 @@ $contents-width: 20cm;
     h6{
         font-size: $font-size-h6;
     }
+
+    pre {
+        font-style: normal;
+        margin: $margin-base;
+        padding: $margin-thin;
+        background: $md-code-bg;
+        border: $md-code-border;
+    }
+    
+    dl {
+        line-height: 1.1;
+        margin: $margin-base;
+        padding: 0 $margin-base;
+        border: $md-dl-border;
+        dt{
+            margin: $margin-base 0 $margin-thin 0;
+            font-weight: bold;
+        }
+        dt:after{
+            content: " :";
+        }
+        dd {
+            font-style: italic;
+            margin: 0 0 $margin-base $margin-base*2;
+            p {
+                margin: 0 0 $margin-thin 0;
+            }
+        }
+    }
+    
+
 }
 
 @media screen {
@@ -39,14 +86,14 @@ $contents-width: 20cm;
         width: $contents-width;
         margin: 0 auto;
         padding: 0;
-        border: dashed 1pt red;
-        border-width: 1pt;
+        //border: dashed 1pt red;
+        //border-width: 1pt;
     }
     .markdown {
-        border: dashed 1pt blue;
-        border-width: 1pt;
+        //border: dashed 1pt blue;
+        //border-width: 1pt;
         margin: 0;
-        padding: 0 0 0 $margin-base * 4;
+        padding: $margin-base 0 0 $margin-base * 4;
         h1 {
             margin-left: -$margin-base * 4;
             padding-left: $margin-thin;
@@ -67,8 +114,8 @@ $contents-width: 20cm;
         width: $contents-width;
         margin: 0;
         padding: 0;
-        border: dashed 1pt red;
-        border-width: 1pt;
+        //border: dashed 1pt red;
+        //border-width: 1pt;
     }
     .markdown {
         margin: 0;
