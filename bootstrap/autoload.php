@@ -2,8 +2,6 @@
 
 define('LARAVEL_START', microtime(true));
 
-require __DIR__.'/../app/Libraries/util.php';
-
 /*
 |--------------------------------------------------------------------------
 | Register The Composer Auto Loader
@@ -34,3 +32,5 @@ $compiledPath = __DIR__.'/cache/compiled.php';
 if (file_exists($compiledPath)) {
     require $compiledPath;
 }
+
+require __DIR__.'/../app/Libraries/util.php';

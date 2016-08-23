@@ -20,12 +20,12 @@ class NoteDB {
         foreach($notes as $id=>$obj){
             $contents[$id] = $obj->toArray();
         }
-        file_put_contents(storage_path('contents/db.json'), json_encode($contents));
+        file_put_contents(contents_path('db.json'), json_encode($contents));
     }
     
     public static function lodeNotes($file){
         $notes = [];
-        $contents = json_decode(file_get_contents(storage_path('contents/db.json')),true);
+        $contents = json_decode(file_get_contents(contents_path('db.json')),true);
         foreach($contents as $id=>$note){
             $obj = new Note(0,0,0);
             $obj->setArray($note);
@@ -37,8 +37,8 @@ class NoteDB {
     
     public static function searchNotes($path, $wildCard = '*.md') {
         $notes = [];
-        if(is_file(storage_path('contents/db.json'))){
-            $notes = self::lodeNotes(storage_path('contents/notes.json'));
+        if(is_file(contents_path('db.json'))){
+            $notes = self::lodeNotes(contents_path('notes.json'));
         }
 
         foreach(glob($path . "/*") as $folder) {
@@ -73,12 +73,12 @@ class NoteDB {
                 }
             }
         }
-        self::saveNotes(storage_path('contents/notes.json'), $notes);
+        self::saveNotes(contents_path('notes.json'), $notes);
         return $notes;
     }
 
     public static function getNotes(){
-        $contentsPath = storage_path('contents');
+        $contentsPath = contents_path();
         $notes = self::searchNotes($contentsPath, '*.md');
         return $notes;
     }
