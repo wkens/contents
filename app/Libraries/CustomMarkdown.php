@@ -119,5 +119,29 @@ class CustomMarkdown extends MarkdownExtra {
 
         return $text;
     }
+    
+    protected function _doImages_inline_callback($matches) {
+        $whole_match	= $matches[1];
+        $alt_text		= $matches[2];
+        $url			= $matches[3] == '' ? $matches[4] : $matches[3];
+        $title			=& $matches[7];
+        $attr  = $this->doExtraAttributes("img", $dummy =& $matches[8]);
+        
+        if(!preg_match('{^http[s]*://.*}mx', trim($url), $m)){
+            $url = url('asset/'.'e918cba0c11d59124e2303601b21d4b0'.'/'.base64_encode($url));
+        }
+
+        $alt_text = $this->encodeAttribute($alt_text);
+        $url = $this->encodeURLAttribute($url);
+        $result = "<img src=\"$url\" alt=\"$alt_text\"";
+        if (isset($title)) {
+            $title = $this->encodeAttribute($title);
+            $result .=  " title=\"$title\""; # $title already quoted
+        }
+        $result .= $attr;
+        $result .= $this->empty_element_suffix;
+
+        return $this->hashPart($result);
+    }
 
 }
