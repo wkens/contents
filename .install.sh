@@ -2,10 +2,10 @@
 
 APP_NAME=contents
 CUR_DIR=`pwd`
-PRIORITY_NO=003
+PRIORITY_NO=004
 
-touch storage/log/laravel.log
-chmod g+rwx storage/log/laravel.log
+touch storage/logs/laravel.log
+chmod g+rw storage/logs/laravel.log
 for d in `find storage -type d`; do
     chmod g+rwx $d
 done
