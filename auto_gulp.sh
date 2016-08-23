@@ -1,6 +1,6 @@
 #/bin/bash
 for i in {0..36000} ; do
-    ls -l resources/assets/sass | egrep '^-' > .scsses.new
+    ls -l --time-style=full-iso resources/assets/sass | egrep '^-' > .scsses.new
     d=`diff .scsses.new .scsses 2>&1`;
     if [ ! -z "$d" ] ; then
         echo "" >&2
