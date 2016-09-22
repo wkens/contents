@@ -8,7 +8,7 @@
 @include('sb-adgenda')
 
 <div class="contents">
-    <div class="markdown">
+    <div class="markdown-main">
     {!! $contents or '' !!}
     </div>
 </div>

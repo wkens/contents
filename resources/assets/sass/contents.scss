@@ -2,19 +2,23 @@
 
 $contents-width: 20cm;
 
-.markdown {
+.markdown-main {
     h1, h2, h3, h4, h5, h6 {
         margin: $margin-base 0;
     }
-    
+
     code {
-        font-family: $font-mono;
-        color: $md-code-fg;
+        font-family: $font-mono !important;
+        white-space: pre;
+        span {
+            font-family: $font-mono !important;
+            white-space: pre;
+        }
     }
-    
+
     p {
         margin: $margin-thin 0;
-        
+
         code{
             background: $md-code-bg;
             padding: $margin-thin/4 $margin-thin;
@@ -52,11 +56,13 @@ $contents-width: 20cm;
     pre {
         font-style: normal;
         margin: $margin-base;
+        /*
         padding: $margin-thin;
         background: $md-code-bg;
         border: $md-code-border;
+        */
     }
-    
+
     dl {
         line-height: 1.1;
         margin: $margin-base;
@@ -77,7 +83,15 @@ $contents-width: 20cm;
             }
         }
     }
-    
+
+    ul, ol{
+        margin: $margin-base;
+        padding: 0 $margin-base 0 $margin-base * 3;
+        li {
+            list-style-position: outside;
+        }
+    }
+
 
 }
 
@@ -89,7 +103,7 @@ $contents-width: 20cm;
         //border: dashed 1pt red;
         //border-width: 1pt;
     }
-    .markdown {
+    .markdown-main {
         //border: dashed 1pt blue;
         //border-width: 1pt;
         margin: 0;
@@ -117,12 +131,15 @@ $contents-width: 20cm;
         //border: dashed 1pt red;
         //border-width: 1pt;
     }
-    .markdown {
+    .markdown-main {
         margin: 0;
         padding: 0 0 0 $margin-base;
         h1, h2, h3, h4, h5, h6 {
             margin-left: -$margin-base;
             padding-left: $margin-thin;
         }
+    }
+    * {
+        font-size: 120%;
     }
 }
