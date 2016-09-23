@@ -1,4 +1,6 @@
-var elixir = require('laravel-elixir');
+const elixir = require('laravel-elixir');
+
+require('laravel-elixir-vue');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,9 +13,10 @@ var elixir = require('laravel-elixir');
  |
  */
 
-elixir(function(mix) {
+elixir(mix => {
     var bpath = 'node_modules/bootstrap-sass/assets';
     mix.sass('app.scss')
+       .webpack('app.js');
         .copy(bpath + '/fonts', 'public/fonts')
         .copy(bpath + '/javascripts/bootstrap.min.js', 'public/js');
     mix.sass('layout.scss');
