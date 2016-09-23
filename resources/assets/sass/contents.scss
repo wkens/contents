@@ -92,6 +92,39 @@ $contents-width: 20cm;
         }
     }
 
+    
+    img{
+        width:100%;
+    }
+
+    .h10p {
+        width:10%;
+    }
+    .h20p {
+        width:20%;
+    }
+    .h30p {
+        width:30%;
+    }
+    .h40p {
+        width:40%;
+    }
+    .h50p {
+        width:50%;
+    }
+    .h60p {
+        width:60%;
+    }
+    .h70p {
+        width:70%;
+    }
+    .h80p {
+        width:80%;
+    }
+    .h90p {
+        width:90%;
+    }
+
 
 }
 
@@ -138,8 +171,5 @@ $contents-width: 20cm;
             margin-left: -$margin-base;
             padding-left: $margin-thin;
         }
-    }
-    * {
-        font-size: 120%;
     }
 }

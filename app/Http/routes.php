@@ -11,5 +11,6 @@
 |
 */
 
+Route::get('/asset/{id}/{item}', 'PortalController@getAsset');
 Route::get('/note/{id}', 'PortalController@getShowNote');
 Route::controller('/', 'PortalController');
