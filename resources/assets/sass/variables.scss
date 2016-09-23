@@ -9,8 +9,8 @@ $font-size-h3: $font-size-base * 1.6;
 $font-size-h2: $font-size-base * 1.8;
 $font-size-h1: $font-size-base * 2.0;
 $font-serif: "ＭＳ P明朝",serif;
-$font-sans: "メイリオ","ＭＳ Pゴシック",sans-serif;
-$font-mono: "ＭＳ ゴシック",monospace;
+$font-sans: "M+ 1p light", "ＭＳ Pゴシック","メイリオ",sans-serif;
+$font-mono: "M+ 1m light", "ＭＳ ゴシック", Consolas, "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
 
 $line-height-base: 1.4;
 $margin-base: $font-size-base * $line-height-base / 2.0;

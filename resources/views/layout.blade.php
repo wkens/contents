@@ -8,11 +8,12 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="<?= gmdate('D, d M Y H:i:s').' GMT' ?>">
-
     <title>Education - @yield('title')</title>
 
     <!-- Bootstrap core CSS -->
     <!-- <link href="css/app.css" rel="stylesheet"> -->
+    <!-- <link href="css/hilighter.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/agate.min.css">
     <style>
     {!! file_get_contents(public_path('css/layout.css')) !!}
     </style>
@@ -28,6 +29,9 @@
     -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
     <script src="{{url('js/sidemenu.js')}}" type="text/javascript"></script>
+    <!-- <script src="{{url('js/highlight.pack.js')}}" type="text/javascript"></script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     </script>
   </body>
 </html>
